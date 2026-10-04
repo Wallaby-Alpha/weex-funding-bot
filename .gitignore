@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+*.log
+weex_funding_config.json
+weex_funding_state.json
+weex_funding_history.json
