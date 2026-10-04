@@ -293,7 +293,7 @@ def execute_exit(ex, pos: Dict[str, Any], config: Dict[str, Any], exit_reason: s
         exit_price = ob["asks"][0][0]  # Buying back at best ask
 
         if not is_dry:
-            order = ex.create_market_buy_order(sym, amount)
+            order = ex.create_market_buy_order(sym, amount, params={"reduceOnly": True})
             exit_price = order.get("average") or order.get("price") or exit_price
 
         # Short P&L: (Entry - Exit) / Entry
